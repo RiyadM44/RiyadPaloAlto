@@ -7,7 +7,7 @@ pipeline {
                     // Execute SSH command and wait for completion
                     sshagent(['ssh-agent']) {
                         def sshResult = sh(script: """
-                            ssh -o StrictHostKeyChecking=no ubuntu@52.17.219.230 '
+                            ssh -o StrictHostKeyChecking=no ubuntu@54.74.215.40 '
                                 docker stop ry || true &&
                                 docker rm ry || true &&
                                 docker rmi riyadm44/djangonewsimage || true &&
