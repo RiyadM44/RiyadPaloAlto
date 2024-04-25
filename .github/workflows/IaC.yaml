@@ -8,7 +8,7 @@ jobs:
   ActivateJenkinsJob:
     name: Pull GitHub Repository Contents and Deploy
     runs-on: ubuntu-latest
-
+    steps:
       - name: Trigger Jenkins Pipeline
         run: |
           curl -X POST \
