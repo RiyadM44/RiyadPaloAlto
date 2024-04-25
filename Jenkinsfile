@@ -8,7 +8,7 @@ pipeline {
                     sshagent(['ssh-agent']) {
                         def sshResult = sh(script: """
                             ssh -o StrictHostKeyChecking=no ubuntu@54.72.122.253 '
-                                echo "Hello From Riyad >> file.txt '
+                                echo "Hello From Riyad" >> file.txt
                             """, returnStatus: true)
                         if (sshResult != 0) {
                             error "SSH connection failed"
@@ -19,6 +19,7 @@ pipeline {
         }   
     }
 }
+
 
 // pipeline {
 //     agent any
