@@ -1,12 +1,12 @@
-name: Pull GitHub Repository Contents and Deploy to Jenkins
+name: Issue Jenkins Job
 
 on:
   push:
     branches: [main]
 
 jobs:
-  pull_repo_and_deploy:
-    name: Pull GitHub Repository Contents and Deploy
+  JenkinsJobActivate:
+    name: Activate Jenkins Job
     runs-on: ubuntu-latest
 
     steps:

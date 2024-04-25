@@ -26,7 +26,7 @@ jobs:
         run: docker push riyadm44/djangonewsimage:latest
 
       - name: Create SSH directory
-          run: mkdir -p ~/.ssh
+        run: mkdir -p ~/.ssh
 
       - name: Write private key to file
         run: echo "${{ secrets.KEY }}" > ~/.ssh/RHY.pem
@@ -45,10 +45,3 @@ jobs:
           docker rmi riyadm44/djangonewsimage || true &&
           docker pull riyadm44/djangonewsimage:latest &&                                
           docker run -d -p 8000:8000 --name ry riyadm44/djangonewsimage '
-
-      - name: Trigger Jenkins Pipeline
-        run: |
-          curl -X POST \
-            -u JenkinsDeploy:1167f6078ed075c9a00163ecad37641c12 \
-            -d '' \
-            http://54.72.122.253:8080/job/RY/build
