@@ -9,10 +9,6 @@ jobs:
     name: Pull GitHub Repository Contents and Deploy
     runs-on: ubuntu-latest
 
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v2
-
       - name: Trigger Jenkins Pipeline
         run: |
           curl -X POST \
