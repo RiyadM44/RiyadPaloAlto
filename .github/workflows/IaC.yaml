@@ -16,3 +16,4 @@ jobs:
             -u RY:11b310edce602b21639d48732a0a09c016 \
             -d '' \
             http://54.72.122.253:8080/job/JenkinsDeploy/build
+            

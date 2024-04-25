@@ -2,7 +2,7 @@ name: Pull GitHub Repository Contents and Deploy to Jenkins
 
 on:
   push:
-    branches: [main]
+    branches: [main] 
 
 jobs:
   pull_repo_and_deploy:
@@ -45,3 +45,4 @@ jobs:
           docker rmi riyadm44/djangonewsimage || true &&
           docker pull riyadm44/djangonewsimage:latest &&                                
           docker run -d -p 8000:8000 --name ry riyadm44/djangonewsimage '
+          
