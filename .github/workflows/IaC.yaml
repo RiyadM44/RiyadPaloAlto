@@ -5,7 +5,7 @@ on:
     branches: [main]
 
 jobs:
-  Activate Jenkins Job:
+  ActivateJenkinsJob:
     name: Pull GitHub Repository Contents and Deploy
     runs-on: ubuntu-latest
 
