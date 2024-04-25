@@ -1,0 +1,21 @@
+name: Call Jenkins Job To deploy IaC
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  Activate Jenkins Job:
+    name: Pull GitHub Repository Contents and Deploy
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Trigger Jenkins Pipeline
+        run: |
+          curl -X POST \
+            -u PA_IaC:1167f6078ed075c9a00163ecad37641c12 \
+            -d '' \
+            http://54.72.122.253:8080/job/PA_IaC/build
