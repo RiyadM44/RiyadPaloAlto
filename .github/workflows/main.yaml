@@ -29,17 +29,17 @@ jobs:
         run: mkdir -p ~/.ssh
 
       - name: Write private key to file
-        run: echo "${{ secrets.KEY }}" > ~/.ssh/RHY.pem
+        run: echo "${{ secrets.KEY }}" > ~/.ssh/Riyad_PaloAlto_Key.pem
 
       - name: Set permissions for private key file
-        run: chmod 600 ~/.ssh/RHY.pem
+        run: chmod 600 ~/.ssh/Riyad_PaloAlto_Key.pem
 
       - name: Update known_hosts file
         run: ssh-keyscan -H 54.72.122.253 >> ~/.ssh/known_hosts
 
       - name: Execute commands on remote server
         run: |
-          ssh -i ~/.ssh/id_rsa ubuntu@54.72.122.253 '
+          ssh -i ~/.ssh/Riyad_PaloAlto_Key.pem ubuntu@54.72.122.253 '
           docker stop ry || true &&
           docker rm ry || true &&
           docker rmi riyadm44/djangonewsimage || true &&
