@@ -39,7 +39,7 @@ jobs:
 
       - name: Execute commands on remote server
         run: |
-          ssh ubuntu@54.72.122.253 '
+          ssh -i {{ secrets.KEY }} ubuntu@54.72.122.253 '
           docker stop ry || true &&
           docker rm ry || true &&
           docker rmi riyadm44/djangonewsimage || true &&
