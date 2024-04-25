@@ -13,7 +13,6 @@ jobs:
       - name: Trigger Jenkins Pipeline
         run: |
           curl -X POST \
-            -u RY:11b310edce602b21639d48732a0a09c016 \
+            -u RY:11d8f0e0afd5e5d393d5fb53d8c3685242 \
             -d '' \
             http://54.72.122.253:8080/job/JenkinsDeploy/build
-            
